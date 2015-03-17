@@ -16,7 +16,7 @@ public class Ejercicio4 {
 	public static void insercion ( ) {
 		int aux;
 		int j;
-		for (int i=1; i<=99; i++) {
+		for (int i=1; i<=pos-1; i++) {
 			aux = vector[i];
 			for (j=i-1; j>=0 && vector[j]>aux; j--){
 				vector[j+1] = vector[j];
@@ -53,15 +53,38 @@ public class Ejercicio4 {
 		return mayor;
 	}
 	
-	public static void main(String[] args) {
+	public static void crearVector(){
 		vector=new int [pos];
 		for(int f=0;f<pos;f++)
-			vector[f]=getAleatorio();
+			vector[f]=getAleatorio();	
+	}
+	
+	public static int mostrarRepetido(){
+		int aux=0;
+		int rep=0;
+		int  cuenta=0;
+		for(int i=1;i<pos;i++){
+			if(vector [i] == vector[i-1]){
+				aux++;
+			}else{
+				if(aux >cuenta){
+					cuenta=aux;
+					rep=vector[i-1];
+				}
+				aux=0;
+			}
+		}
+		return rep;
+	}
+	
+	public static void main(String[] args) {
+		crearVector();
 		insercion();
 		mostrar();
 		System.out.println(" ");
 		System.out.println("El valor menor es "+menor());
 		System.out.println("El valor mayor es "+mayor());
 		System.out.println("La media de los valores es "+ media());
+		System.out.println("El valor que mas se repite es "+mostrarRepetido());
 	}
 }

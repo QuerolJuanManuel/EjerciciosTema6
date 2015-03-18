@@ -36,7 +36,7 @@ public class Ejercicio5 {
 		int j=0;
 		System.out.println();
 		System.out.print("Los valores que no estan son:");
-		for (int i=0;i<pos;i++){
+		for (int i=1;i<pos;i++){
 			for(j=0;j<pos;j++){
 				if(i==vector[j]){
 					break;

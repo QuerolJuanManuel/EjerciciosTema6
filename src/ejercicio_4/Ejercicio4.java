@@ -8,15 +8,15 @@ public class Ejercicio4 {
 		return (int)(Math.random()*70+10);
 	}
 
-	public static void mostrar(){
+	public static void mostrar(){ //muestra el vector por pantalla
 		for(int f=0;f<vector.length;f++)
 			System.out.print(vector [f]+" ");
 	}
 	
-	public static void insercion ( ) {
+	public static void insercion ( ) { //ordena el vector por el metodo de insercion
 		int aux;
 		int j;
-		for (int i=1; i<=pos-1; i++) {
+		for (int i=1; i<=vector.length-1; i++) {
 			aux = vector[i];
 			for (j=i-1; j>=0 && vector[j]>aux; j--){
 				vector[j+1] = vector[j];
@@ -27,15 +27,15 @@ public class Ejercicio4 {
 	
 	public static int media(){ //Saca la media de los valores del vector.
 		int media=0;
-		for (int i=0; i<pos; i++) { 
+		for (int i=0; i<vector.length; i++) { 
 			media = media + vector[i];
 			}
-			return media = media / pos;
+			return media = media /vector.length;
 	}
 	
 	public static int menor(){ //Recorre el vector y saca el numero menor.
 		int menor=100;
-		for(int i=0;i<pos;i++){
+		for(int i=0;i<vector.length;i++){
 			if(vector[i] < menor){
 			menor = vector[i];
 			}
@@ -45,7 +45,7 @@ public class Ejercicio4 {
 	
 	public static int mayor(){ //Recorre el vector y saca el numero mayor.
 		int mayor=0;
-		for(int i=0;i<pos;i++){
+		for(int i=0;i<vector.length;i++){
 		if (vector[i] > mayor){
 			mayor = vector[i];
 			}
@@ -53,17 +53,17 @@ public class Ejercicio4 {
 		return mayor;
 	}
 	
-	public static void crearVector(){
+	public static void crearVector(){ //Crea el vector
 		vector=new int [pos];
-		for(int f=0;f<pos;f++)
+		for(int f=0;f<vector.length;f++)
 			vector[f]=getAleatorio();	
 	}
 	
-	public static int mostrarRepetido(){
+	public static int mostrarRepetido(){ //metodo que muestra el num que mas se repite
 		int aux=0;
 		int rep=0;
 		int  cuenta=0;
-		for(int i=1;i<pos;i++){
+		for(int i=1;i<vector.length;i++){
 			if(vector [i] == vector[i-1]){
 				aux++;
 			}else{

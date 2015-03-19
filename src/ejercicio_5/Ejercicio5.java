@@ -17,7 +17,7 @@ public class Ejercicio5 {
 	public static void insercion ( ) {
 		int aux;
 		int j;
-		for (int i=1; i<=pos-1; i++) {
+		for (int i=1; i<=vector.length-1; i++) {
 			aux = vector[i];
 			for (j=i-1; j>=0 && vector[j]>aux; j--){
 				vector[j+1] = vector[j];
@@ -28,7 +28,7 @@ public class Ejercicio5 {
 	
 	public static void crearVector(){
 		vector=new int [pos];
-		for(int f=0;f<pos;f++)
+		for(int f=0;f<vector.length;f++)
 			vector[f]=getAleatorio();
 	}
 	
@@ -36,13 +36,13 @@ public class Ejercicio5 {
 		int j=0;
 		System.out.println();
 		System.out.print("Los valores que no estan son:");
-		for (int i=1;i<pos;i++){
-			for(j=0;j<pos;j++){
+		for (int i=1;i<vector.length;i++){
+			for(j=0;j<vector.length;j++){
 				if(i==vector[j]){
 					break;
 				}
 			}
-			if(j==pos){
+			if(j==vector.length){
 				System.out.print(i+" ");
 			}
 		}

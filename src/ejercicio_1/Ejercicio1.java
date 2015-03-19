@@ -19,7 +19,7 @@ public class Ejercicio1 {
 	public static void insercion ( ) {
 		int aux;
 		int j;
-		for (int i=1; i<=pos-1; i++) {
+		for (int i=1; i<=ordenado.length-1; i++) {
 			aux = ordenado[i];
 			for (j=i-1; j>=0 && ordenado[j]>aux; j--){
 				ordenado[j+1] = ordenado[j];
